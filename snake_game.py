@@ -101,6 +101,8 @@ def game_over():
 # Main Function
 while True:
      
+    # Hiding the mouse
+    pygame.mouse.set_cursor((8,8),(0,0),(0,0,0,0,0,0,0,0),(0,0,0,0,0,0,0,0))
     # handling key events
     for event in pygame.event.get():
         if event.type == pygame.KEYDOWN:
@@ -112,6 +114,9 @@ while True:
                 change_to = 'LEFT'
             if event.key == pygame.K_RIGHT:
                 change_to = 'RIGHT'
+            # Press q to exit the game
+            if event.key == pygame.K_q:
+                quit()
  
     # If two keys pressed simultaneously
     # we don't want snake to move into two
